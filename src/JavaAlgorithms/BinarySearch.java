@@ -4,8 +4,8 @@ package JavaAlgorithms;
 
 public class BinarySearch {
     public static void main(String [] args){
-        int[] arr = {1,2,3,4,5,6};
-           var x = findtarget(arr, 6);
+        int[] arr = {17, 13, 10, 9, 7, 5, 2};
+           var x = findtarget(arr, 7);
         System.out.println(x);
     }
     public static int findtarget(int[]arr, int target){
@@ -14,17 +14,17 @@ public class BinarySearch {
 
 
         while(start <= end){
-            int mid = Math.round( (start + end)/2 );
+            int mid = (start + end)/2;
 
             if ( arr[mid] == target)
                 return mid;
 
             else if (target < arr[mid]){
-                end = mid - 1;
+                start = mid + 1;
             }
 
             else {
-                start = mid + 1;
+                end = mid - 1;
             }
         }
 
